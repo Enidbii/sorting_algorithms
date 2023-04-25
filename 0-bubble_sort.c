@@ -10,7 +10,7 @@
  * @b: second element
  * Return: nothing
  */
-void swap(int* a, int* b)
+void swap(int *a, int *b)
 {
 	int c = *a;
 	*a = *b;
@@ -25,7 +25,7 @@ void swap(int* a, int* b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	long unsigned int i, j;
+	unsigned long int i, j;
 	bool swapped;
 
 	for (i = 0; i < size - 1; i++)
