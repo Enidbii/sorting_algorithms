@@ -1,19 +1,18 @@
 #include "sort.h"
-#include <stdlib.h>
-#include <stdbool.h>
 #include "print_array.c"
 
 /**
  * swap - swap two elements
+ * @array: array of ints
  * @a: first element
  * @b: second element
  * Return: nothing
  */
-void swap(int *a, int *b)
+void swap(int **array, size_t a, size_t b)
 {
-	int c = *a;
-	*a = *b;
-	*b = c;
+	int c = (*array)[a];
+	(*array)[a] = (*array)[b];
+	(*array)[b] = c;
 }
 
 /**
@@ -24,22 +23,24 @@ void swap(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned long int i, j;
-	bool swapped;
+	size_t i, j, swapped;
+
+	if (size < 2)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		swapped = false;
+		swapped = 0;
 		for (j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(&array[j], &array[j + 1]);
-				swapped = true;
-				print_array(&array[i], size);
+				swap(&array, j, j + 1);
+				print_array(array, size);
+				swapped = 1;
 			}
 		}
-		if (swapped == false)
+		if (!swapped)
 			break;
 	}
 }
