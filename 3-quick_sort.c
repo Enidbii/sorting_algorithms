@@ -19,7 +19,8 @@ void swap(int **array, size_t a, size_t b)
  * @array: array to be sorted
  * @l_bound: low boundray
  * @u_bound: upeer boundery
- * @size of the array
+ * @size: of the array
+ * Return: start
  */
 size_t partition(int **array, size_t l_bound, size_t u_bound, size_t size)
 {
@@ -71,7 +72,7 @@ void recursive_sort(int **array, size_t l_bound, size_t u_bound, size_t size)
 }
 
 /**
- * quick_sort: sorts an array using quick sort
+ * quick_sort - sorts an array using quick sort
  * @array: array to be sorted
  * @size: size of array to be sorted
  * Return: 0
